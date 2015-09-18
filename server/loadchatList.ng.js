@@ -3,14 +3,17 @@ Meteor.startup(function() {
 		var chatlist = [{
 			author: "Admin",
 			message: "You've just joined the chatroom!",
+			colour: "black",
 			createdAt: new Date()
 		},{
 			author: "Admin",
 			message: "You've just joined the chatroom!",
+			colour: "black",
 			createdAt: new Date()
 		},{
 			author: "Admin",
 			message: "You've just joined the chatroom!",
+			colour: "black",
 			createdAt: new Date()
 		}];
 

@@ -4,37 +4,31 @@ angular.module("ChatRoom").controller("MainController", function($scope, $meteor
 
 	$scope.chatList = $meteor.collection(ChatList);
 
-	$scope.author = "";
-	$scope.message = "";
-	$scope.text = "asdfadsfd";
+	$scope.newMessage = {
+		author: "",
+		message: "",
+		colour: "black"
+	};
+
+	$scope.black = "black",	$scope.red = "red",	$scope.blue = "blue",
+	$scope.grey = "grey", $scope.green = "green", $scope.purple = "purple";
+
+	$scope.changeColour = function(newcolour) {
+		$scope.newMessage.colour = newcolour;
+	};
 
 	$scope.submit = function() {
 		console.log("You pressed submit!");
-		if($scope.message) {
-			if($scope.chatList.length >= 20) {
+		if($scope.newMessage.message) {
+			if($scope.chatList.length >= 20)
 				$scope.chatList.splice(0,1);
-			}
-
 			$scope.chatList.push({
-				author: $scope.author,
-				message: $scope.message,
+				author: $scope.newMessage.author,
+				message: $scope.newMessage.message,
+				colour: $scope.newMessage.colour,
 				createdAt: new Date()
 			});
-			$scope.message = "";
-		}
-	};
-
-	$scope.sort = {
-		name: "Ascending",
-		value: "-"
-	};
-	$scope.sortChange = function() {
-		if($scope.sort.value == "-") {
-			$scope.sort.name = "Descending";
-			$scope.sort.value = "+";
-		} else {
-			$scope.sort.name = "Ascending";
-			$scope.sort.value = "-";
+			$scope.newMessage.message = "";
 		}
 	};
 });

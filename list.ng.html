@@ -7,21 +7,46 @@
 			<div class="col-md-8 col-md-offset-2 well" style="overflow: auto; max-height: 60vh;">
 				<div ng-repeat="object in chatList">
 					<p>
-						{{object.author}}: {{object.message}}
+						<span style="color:{{object.colour}};">{{object.author}}</span>: {{object.message}}
 					</p>					
 				</div>
 			</div>
 		</div>
-
 	</div>
 
 	<div class="container">
 		<div class="row">
 			<div class="col-md-8 col-md-offset-2 well text-center">
 				<form ng-submit="submit()" class="form-inline">
-					<input type="text" size="20" ng-model="author" placeholder="Type Your Name Here!" class="form-control">
-					<input type="text" size="50" ng-model="message" placeholder="Type Your Message Here!" class="form-control">
-					<input type="Submit" class="btn">
+					<div class="col-md-10" style="padding: 0px;">
+
+						<div class="col-md-3">
+							<input type="text" style="width:100%" ng-model="newMessage.author" placeholder="Name here" class="form-control">
+						</div>
+
+						<div class="col-md-6">
+							<input type="text" style="width:100%" ng-model="newMessage.message" placeholder="And message goes here!" class="form-control">
+						</div>
+
+						<div class="col-md-3">
+							<div class="dropup">
+								<button class="btn dropdown-toggle" type="button" data-toggle="dropdown">
+									Text Colour<span class="caret"></span>
+								</button>
+								<ul class="dropdown-menu">
+									<li><a href="" ng-click="changeColour('black')">Black</a></li>
+									<li><a href="" ng-click="changeColour('red')">Red</a></li>
+									<li><a href="" ng-click="changeColour('blue')">Blue</a></li>
+									<li><a href="" ng-click="changeColour('grey')">Grey</a></li>
+									<li><a href="" ng-click="changeColour('green')">Green</a></li>
+									<li><a href="" ng-click="changeColour('purple')">Purple</a></li>
+								</ul>
+							</div>
+						</div>
+					</div>
+					<div class="col-md-2">
+						<input type="Submit" style="width:100%" class="btn">
+					</div>
 				</form>
 			</div>
 		</div>
