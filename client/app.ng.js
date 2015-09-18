@@ -6,9 +6,15 @@ angular.module("ChatRoom").controller("MainController", function($scope, $meteor
 
 	$scope.author = "";
 	$scope.message = "";
+	$scope.text = "asdfadsfd";
 
 	$scope.submit = function() {
+		console.log("You pressed submit!");
 		if($scope.message) {
+			if($scope.chatList.length >= 20) {
+				$scope.chatList.splice(0,1);
+			}
+
 			$scope.chatList.push({
 				author: $scope.author,
 				message: $scope.message,
@@ -16,7 +22,7 @@ angular.module("ChatRoom").controller("MainController", function($scope, $meteor
 			});
 			$scope.message = "";
 		}
-	}
+	};
 
 	$scope.sort = {
 		name: "Ascending",
@@ -30,5 +36,5 @@ angular.module("ChatRoom").controller("MainController", function($scope, $meteor
 			$scope.sort.name = "Ascending";
 			$scope.sort.value = "-";
 		}
-	}
+	};
 });

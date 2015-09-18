@@ -1,37 +1,29 @@
 <div ng-controller="MainController">
-	<div class="row">
-		<div class="col-md-8 col-md-offset-2 well">
-			<form ng-submit="submit()" class="form-inline text-center">
-				<label class="control-label">New Items: </label>
-				<input type="text" ng-model="newTask" placeholder="Type Here!" class="form-control">
-				<input type="Submit" class="btn">
-				<button class="btn" ng-click="sortChange()">{{sort.name}}</button>
-			</form>
 
-			<div ng-repeat="object in list | orderBy:sort.value | filter: { isDone: true }">
-				<div class="checkbox animated fadeInUp">
-					<label>
-						<input type="checkbox" ng-model="object.isDone">
-						<del>{{object.task}}</del>&nbsp;
-						<button type="button" class="close" aria-label="Close" ng-click="remove(object)">
-							<span aria-hidden="true">&nbsp;&nbsp;&times;</span>
-						</button>
-					</label>
+
+	<div class="container">
+
+		<div class="row">
+			<div class="col-md-8 col-md-offset-2 well" style="overflow: auto; max-height: 60vh;">
+				<div ng-repeat="object in chatList">
+					<p>
+						{{object.author}}: {{object.message}}
+					</p>					
 				</div>
 			</div>
-
 		</div>
+
 	</div>
 
-	<footer class="footer well">
-		<div class="container">
-			<div class="row">
-				<div class="col-md-8 col-md-offset-2">
-					<p>
-						asdfpojasd fpaosdjfdpofj asdifjadsofidsaj fasdfpojasd fpaosdjfdpofj asdifjadsofidsaj fasdfpojasd fpaosdjfdpofj asdifjadsofidsaj fasdfpojasd fpaosdjfdpofj asdifjadsofidsaj fasdfpojasd fpaosdjfdpofj asdifjadsofidsaj fasdfpojasd fpaosdjfdpofj asdifjadsofidsaj fasdfpojasd fpaosdjfdpofj asdifjadsofidsaj fasdfpojasd fpaosdjfdpofj asdifjadsofidsaj fasdfpojasd fpaosdjfdpofj asdifjadsofidsaj fasdfpojasd fpaosdjfdpofj asdifjadsofidsaj fasdfpojasd fpaosdjfdpofj asdifjadsofidsaj fasdfpojasd fpaosdjfdpofj asdifjadsofidsaj fasdfpojasd fpaosdjfdpofj asdifjadsofidsaj fasdfpojasd fpaosdjfdpofj asdifjadsofidsaj fasdfpojasd fpaosdjfdpofj asdifjadsofidsaj fasdfpojasd fpaosdjfdpofj asdifjadsofidsaj fasdfpojasd fpaosdjfdpofj asdifjadsofidsaj fasdfpojasd fpaosdjfdpofj asdifjadsofidsaj fasdfpojasd fpaosdjfdpofj asdifjadsofidsaj fasdfpojasd fpaosdjfdpofj asdifjadsofidsaj fasdfpojasd fpaosdjfdpofj asdifjadsofidsaj fvjadsofidsaj fasdfpojasd fpaosdjfdpofj asdifjadsofidsaj fasdfpojasd fpaosdjfdpofj asdifjadsofidsaj fasdfpojasd fpaosdjfdpofj asdifjadsofidsaj fasdfpojasd fpaosdjfdpofj asdifjadsofidsaj fasdfpojasd fpaosdjfdpofj asdifjadsofidsaj fasdfpojasd fpaosdjfdpofj asdifjadsofidsaj fasdfpojasd fpaosdjfdpofj asdifjadsofidsaj fasdfpojasd fpaosdjfdpofj asdifjadsofidsaj fasdfpojasd fpaosdjfdpofj asdifjadsofidsaj fasdfpojasd fpaosdjfdpofj asdifjadsofidsaj fasdfpojasd fpaosdjfdpofj asdifjadsofidsaj fasdfpojasd fpaosdjfdpofj asdifjadsofidsaj fasdfpojasd fpaosdjfdpofj asdifjadsofidsaj fvjadsofidsaj fasdfpojasd fpaosdjfdpofj asdifjadsofidsaj fasdfpojasd fpaosdjfdpofj asdifjadsofidsaj fasdfpojasd fpaosdjfdpofj asdifjadsofidsaj fasdfpojasd fpaosdjfdpofj asdifjadsofidsaj fasdfpojasd fpaosdjfdpofj asdifjadsofidsaj fasdfpojasd fpaosdjfdpofj asdifjadsofidsaj fasdfpojasd fpaosdjfdpofj asdifjadsofidsaj fasdfpojasd fpaosdjfdpofj asdifjadsofidsaj fasdfpojasd fpaosdjfdpofj asdifjadsofidsaj fasdfpojasd fpaosdjfdpofj asdifjadsofidsaj fasdfpojasd fpaosdjfdpofj asdifjadsofidsaj fasdfpojasd fpaosdjfdpofj asdifjadsofidsaj fasdfpojasd fpaosdjfdpofj asdifjadsofidsaj fvjadsofidsaj fasdfpojasd fpaosdjfdpofj asdifjadsofidsaj fasdfpojasd fpaosdjfdpofj asdifjadsofidsaj fasdfpojasd fpaosdjfdpofj asdifjadsofidsaj fasdfpojasd fpaosdjfdpofj asdifjadsofidsaj fasdfpojasd fpaosdjfdpofj asdifjadsofidsaj fasdfpojasd fpaosdjfdpofj asdifjadsofidsaj fasdfpojasd fpaosdjfdpofj asdifjadsofidsaj fasdfpojasd fpaosdjfdpofj asdifjadsofidsaj fasdfpojasd fpaosdjfdpofj asdifjadsofidsaj fasdfpojasd fpaosdjfdpofj asdifjadsofidsaj fasdfpojasd fpaosdjfdpofj asdifjadsofidsaj fasdfpojasd fpaosdjfdpofj asdifjadsofidsaj fasdfpojasd fpaosdjfdpofj asdifjadsofidsaj fvjadsofidsaj fasdfpojasd fpaosdjfdpofj asdifjadsofidsaj fasdfpojasd fpaosdjfdpofj asdifjadsofidsaj fasdfpojasd fpaosdjfdpofj asdifjadsofidsaj fasdfpojasd fpaosdjfdpofj asdifjadsofidsaj fasdfpojasd fpaosdjfdpofj asdifjadsofidsaj fasdfpojasd fpaosdjfdpofj asdifjadsofidsaj fasdfpojasd fpaosdjfdpofj asdifjadsofidsaj fasdfpojasd fpaosdjfdpofj asdifjadsofidsaj fasdfpojasd fpaosdjfdpofj asdifjadsofidsaj fasdfpojasd fpaosdjfdpofj asdifjadsofidsaj fasdfpojasd fpaosdjfdpofj asdifjadsofidsaj fasdfpojasd fpaosdjfdpofj asdifjadsofidsaj fasdfpojasd fpaosdjfdpofj asdifjadsofidsaj fvjadsofidsaj fasdfpojasd fpaosdjfdpofj asdifjadsofidsaj fasdfpojasd fpaosdjfdpofj asdifjadsofidsaj fasdfpojasd fpaosdjfdpofj asdifjadsofidsaj fasdfpojasd fpaosdjfdpofj asdifjadsofidsaj fasdfpojasd fpaosdjfdpofj asdifjadsofidsaj fasdfpojasd fpaosdjfdpofj asdifjadsofidsaj fasdfpojasd fpaosdjfdpofj asdifjadsofidsaj fasdfpojasd fpaosdjfdpofj asdifjadsofidsaj fasdfpojasd fpaosdjfdpofj asdifjadsofidsaj fasdfpojasd fpaosdjfdpofj asdifjadsofidsaj fasdfpojasd fpaosdjfdpofj asdifjadsofidsaj fasdfpojasd fpaosdjfdpofj asdifjadsofidsaj fasdfpojasd fpaosdjfdpofj asdifjadsofidsaj fvjadsofidsaj fasdfpojasd fpaosdjfdpofj asdifjadsofidsaj fasdfpojasd fpaosdjfdpofj asdifjadsofidsaj fasdfpojasd fpaosdjfdpofj asdifjadsofidsaj fasdfpojasd fpaosdjfdpofj asdifjadsofidsaj fasdfpojasd fpaosdjfdpofj asdifjadsofidsaj fasdfpojasd fpaosdjfdpofj asdifjadsofidsaj fasdfpojasd fpaosdjfdpofj asdifjadsofidsaj fasdfpojasd fpaosdjfdpofj asdifjadsofidsaj fasdfpojasd fpaosdjfdpofj asdifjadsofidsaj fasdfpojasd fpaosdjfdpofj asdifjadsofidsaj fasdfpojasd fpaosdjfdpofj asdifjadsofidsaj fasdfpojasd fpaosdjfdpofj asdifjadsofidsaj fasdfpojasd fpaosdjfdpofj asdifjadsofidsaj fvjadsofidsaj fasdfpojasd fpaosdjfdpofj asdifjadsofidsaj fasdfpojasd fpaosdjfdpofj asdifjadsofidsaj fasdfpojasd fpaosdjfdpofj asdifjadsofidsaj fasdfpojasd fpaosdjfdpofj asdifjadsofidsaj fasdfpojasd fpaosdjfdpofj asdifjadsofidsaj fasdfpojasd fpaosdjfdpofj asdifjadsofidsaj fasdfpojasd fpaosdjfdpofj asdifjadsofidsaj fasdfpojasd fpaosdjfdpofj asdifjadsofidsaj fasdfpojasd fpaosdjfdpofj asdifjadsofidsaj fasdfpojasd fpaosdjfdpofj asdifjadsofidsaj fasdfpojasd fpaosdjfdpofj asdifjadsofidsaj fasdfpojasd fpaosdjfdpofj asdifjadsofidsaj fasdfpojasd fpaosdjfdpofj asdifjadsofidsaj fv
-					</p>
-				</div>
+	<div class="container">
+		<div class="row">
+			<div class="col-md-8 col-md-offset-2 well text-center">
+				<form ng-submit="submit()" class="form-inline">
+					<input type="text" size="20" ng-model="author" placeholder="Type Your Name Here!" class="form-control">
+					<input type="text" size="50" ng-model="message" placeholder="Type Your Message Here!" class="form-control">
+					<input type="Submit" class="btn">
+				</form>
 			</div>
 		</div>
-	</footer>	
+	</div>	
 </div>
