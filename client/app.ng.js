@@ -1,25 +1,22 @@
-angular.module("To-Do",['angular-meteor']);
+angular.module("ChatRoom",['angular-meteor']);
 
-angular.module("To-Do").controller("MainController", function($scope, $meteor) {
+angular.module("ChatRoom").controller("MainController", function($scope, $meteor) {
 
-	$scope.list = $meteor.collection(List);
+	$scope.chatList = $meteor.collection(ChatList);
 
-	$scope.newTask = "";
+	$scope.author = "";
+	$scope.message = "";
 
 	$scope.submit = function() {
-		if($scope.newTask) {
-			$scope.list.push({
-				task: $scope.newTask,
-				createdAt: new Date(),
-				isDone: false
+		if($scope.message) {
+			$scope.chatList.push({
+				author: $scope.author,
+				message: $scope.message,
+				createdAt: new Date()
 			});
-			$scope.newTask = "";
+			$scope.message = "";
 		}
 	}
-
-	$scope.remove = function(object) {
-		$scope.list.splice($scope.list.indexOf(object), 1);
-	};
 
 	$scope.sort = {
 		name: "Ascending",
@@ -34,6 +31,4 @@ angular.module("To-Do").controller("MainController", function($scope, $meteor) {
 			$scope.sort.value = "-";
 		}
 	}
-
-
 });

@@ -1,0 +1,1 @@
+ChatList = new Mongo.Collection("chatList");
