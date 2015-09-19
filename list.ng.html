@@ -30,8 +30,9 @@
 
 						<div class="col-md-3">
 							<div class="dropup">
-								<button class="btn dropdown-toggle" type="button" data-toggle="dropdown">
-									Text Colour<span class="caret"></span>
+								<button class="btn dropdown-toggle" type="button" data-toggle="dropdown" style="width: 100%">
+									{{newMessage.colour.charAt(0).toUpperCase() + newMessage.colour.slice(1)}}
+									<span class="caret"></span>
 								</button>
 								<ul class="dropdown-menu">
 									<li><a href="" ng-click="changeColour('black')">Black</a></li>

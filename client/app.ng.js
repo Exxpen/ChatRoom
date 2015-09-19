@@ -7,7 +7,7 @@ angular.module("ChatRoom").controller("MainController", function($scope, $meteor
 	$scope.newMessage = {
 		author: "",
 		message: "",
-		colour: "black"
+		colour: "Pick a colour!"
 	};
 
 	$scope.black = "black",	$scope.red = "red",	$scope.blue = "blue",
