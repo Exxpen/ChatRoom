@@ -19,7 +19,7 @@ angular.module("ChatRoom").controller("MainController", function($scope, $meteor
 
 	$scope.submit = function() {
 		console.log("You pressed submit!");
-		if($scope.newMessage.message) {
+		if($scope.newMessage.message && $scope.newMessage.author) {
 			if($scope.chatList.length >= 20)
 				$scope.chatList.splice(0,1);
 			$scope.chatList.push({
